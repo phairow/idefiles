@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node2",
+            "request": "attach",
+            "name": "Attach to Port",
+            "port": 9229
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program - JS",
+            "program": "${workspaceRoot}/dist/server.js",
+            "cwd": "${workspaceRoot}",
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build-debug-js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program - TS",
+            "program": "${workspaceRoot}/server/debug.ts",
+            "cwd": "${workspaceRoot}",
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build-debug-ts"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 5858,
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "version": "0.1.0",
+    "tasks": [
+        {
+            "taskName": "build-debug-ts",
+            "command": "npm",
+            "args": ["run", "build"],
+            "isShellCommand": true,
+            "isBuildCommand": true,
+            "showOutput": "never"
+        },
+        {
+            "taskName": "build-debug-js",
+            "command": "npm",
+            "args": ["run", "build_nosourcemaps"],
+            "isShellCommand": true,
+            "showOutput": "never"
+        }
+    ]
+}
