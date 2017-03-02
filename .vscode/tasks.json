@@ -4,7 +4,7 @@
         {
             "taskName": "build-debug-ts",
             "command": "npm",
-            "args": ["run", "build"],
+            "args": ["run", "build_debug"],
             "isShellCommand": true,
             "isBuildCommand": true,
             "showOutput": "never"
@@ -12,7 +12,7 @@
         {
             "taskName": "build-debug-js",
             "command": "npm",
-            "args": ["run", "build_nosourcemaps"],
+            "args": ["run", "build"],
             "isShellCommand": true,
             "showOutput": "never"
         }
