@@ -12,7 +12,7 @@
         {
             "taskName": "build-debug-js",
             "command": "npm",
-            "args": ["run", "build"],
+            "args": ["run", "build_debug_js"],
             "isShellCommand": true,
             "showOutput": "never"
         }
