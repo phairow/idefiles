@@ -3,9 +3,14 @@
     "configurations": [
         {
             "type": "node",
-            "request": "attach",
-            "name": "Attach to Port",
-            "port": 9229
+            "request": "launch",
+            "name": "Launch Program - TS",
+            "program": "${workspaceRoot}/src/main/debug.ts",
+            "cwd": "${workspaceRoot}/dist",
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build-debug-ts"
         },
         {
             "type": "node",
@@ -21,13 +26,22 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program - TS",
-            "program": "${workspaceRoot}/src/main/debug.ts",
+            "name": "Launch Tests - TS",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "cwd": "${workspaceRoot}/dist",
+            "args": [
+                "-u",
+                "tdd",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceRoot}/dist/test"
+            ],
             "outFiles": [
                 "${workspaceRoot}/dist/**/*.js"
             ],
-            "preLaunchTask": "build-debug-ts"
+            "preLaunchTask": "build-debug-ts",
+            "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "node",
@@ -35,21 +49,25 @@
             "name": "Launch Tests - JS",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "cwd": "${workspaceRoot}/dist",
+            "args": [
+                "-u",
+                "tdd",
+                "--timeout",
+                "999999",
+                "--colors",
+                "${workspaceRoot}/dist/test"
+            ],
             "outFiles": [
                 "${workspaceRoot}/dist/**/*.js"
             ],
-            "preLaunchTask": "build-debug-js"
+            "preLaunchTask": "build-debug-js",
+            "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "node",
-            "request": "launch",
-            "name": "Launch Tests - TS",
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-            "cwd": "${workspaceRoot}/dist",
-            "outFiles": [
-                "${workspaceRoot}/dist/**/*.js"
-            ],
-            "preLaunchTask": "build-debug-ts"
+            "request": "attach",
+            "name": "Attach to Port",
+            "port": 9229
         },
         {
             "type": "node",
