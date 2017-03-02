@@ -12,7 +12,7 @@
             "request": "launch",
             "name": "Launch Program - JS",
             "program": "${workspaceRoot}/dist/main/app.js",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/dist",
             "outFiles": [
                 "${workspaceRoot}/dist/**/*.js"
             ],
@@ -23,7 +23,29 @@
             "request": "launch",
             "name": "Launch Program - TS",
             "program": "${workspaceRoot}/src/main/debug.ts",
-            "cwd": "${workspaceRoot}",
+            "cwd": "${workspaceRoot}/dist",
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build-debug-ts"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Tests - JS",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "cwd": "${workspaceRoot}/dist",
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build-debug-js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Tests - TS",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "cwd": "${workspaceRoot}/dist",
             "outFiles": [
                 "${workspaceRoot}/dist/**/*.js"
             ],
